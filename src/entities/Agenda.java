@@ -15,10 +15,16 @@ public class Agenda {
 	}
 	
 	public void procuraContato(String nome) {
+		String achou;
+		for(Contato e:contatos) {
+			if(e.getNome()==nome) {
+				achou=e.getEmail();
+				
+			}
+		}
+		System.out.println(achou);
 		
-		System.out.println("Gay");
 
-		
 		
 	}
 	
