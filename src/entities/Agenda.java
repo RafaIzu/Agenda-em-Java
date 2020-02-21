@@ -27,15 +27,23 @@ public class Agenda {
 	
 	public void removerContato(String nome) {
 		Contato achou=null;
+		
 		for(Contato e:contatos) {
 			if(e.getNome().equals(nome)) {
 				achou= e;		
 			}
 		}
-		ListIterator<Contato>iterator=contatos.listIterator();
-		while(iterator.hasNext()) {
-			if(iterator.next().equals(achou)) {
-				iterator.remove();
+		
+		if(achou==null) {
+			System.out.println("contato nao encontrado");
+		}
+		
+		else {
+			ListIterator<Contato>iterator=contatos.listIterator();
+			while(iterator.hasNext()) {
+				if(iterator.next().equals(achou)) {
+					iterator.remove();
+				}
 			}
 		}
 
