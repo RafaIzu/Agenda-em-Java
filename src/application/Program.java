@@ -44,18 +44,22 @@ public class Program {
 				case 2:
 					System.out.print("Digite um nome:");
 					String nomeProcura=sc.next();
-					agenda.procuraContato(nomeProcura);
-				
+					Contato achou=agenda.procuraContato(nomeProcura);
+					if(achou==null) {
+						System.out.println("Contato não encontrado");
+					}
+					else {
+						System.out.println(achou.getEmail());
+					}
+					
 					break;
 				default:
 					System.out.println("Opcao invalida:");
-				
-						
+					
 			}
 			System.out.print("Deseja continuar(s/n):");
 			opcao=sc.next().charAt(0);
 		}
-		
 		
 		sc.close();
 	}
